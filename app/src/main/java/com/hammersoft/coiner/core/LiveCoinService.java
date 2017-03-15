@@ -6,16 +6,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
-
-import br.com.hammersoft.core.constants.ECurrency;
-import br.com.hammersoft.core.data.AvailableCurrencies;
-import br.com.hammersoft.core.data.AvailablePairsInfo;
-import br.com.hammersoft.core.data.CurrencyPairExInfo;
-import br.com.hammersoft.core.data.CurrencyPairInfo;
-import br.com.hammersoft.core.data.Info;
-import br.com.hammersoft.core.data.PairInfo;
-import br.com.hammersoft.core.post.HttpClientPost;
-import br.com.hammersoft.core.post.exception.HttpPostException;
+import com.hammersoft.coiner.core.data.AvailableCurrencies;
+import com.hammersoft.coiner.core.data.AvailablePairsInfo;
+import com.hammersoft.coiner.core.data.CurrencyPairExInfo;
+import com.hammersoft.coiner.core.data.CurrencyPairInfo;
+import com.hammersoft.coiner.core.data.PairInfo;
+import com.hammersoft.coiner.core.post.HttpClientPost;
+import com.hammersoft.coiner.core.post.exception.HttpPostException;
 
 public final class LiveCoinService {
 	
@@ -31,7 +28,7 @@ public final class LiveCoinService {
 		
 	}
 	
-	public static AvailablePairsInfo getAvailablePairsInfo() throws JSONException, IOException, HttpPostException{
+	public static AvailablePairsInfo getAvailablePairsInfo() throws JSONException, IOException, HttpPostException {
 		String fullUrl = 
 				LIVECOIN_API_BASE_URL + 
 				LIVECOIN_API_TICKER_URL;
