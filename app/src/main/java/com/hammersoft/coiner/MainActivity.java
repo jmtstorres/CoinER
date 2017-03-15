@@ -3,13 +3,12 @@ package com.hammersoft.coiner;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import org.knowm.xchange.Exchange;
-import org.knowm.xchange.ExchangeFactory;
-import org.knowm.xchange.bitstamp.BitstampExchange;
-import org.knowm.xchange.currency.CurrencyPair;
-import org.knowm.xchange.dto.marketdata.Ticker;
-import org.knowm.xchange.livecoin.LivecoinExchange;
-import org.knowm.xchange.service.marketdata.MarketDataService;
+import com.hammersoft.coiner.core.LiveCoinService;
+import com.hammersoft.coiner.core.data.AvailablePairsInfo;
+import com.hammersoft.coiner.core.data.PairInfo;
+import com.hammersoft.coiner.core.post.exception.HttpPostException;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -28,7 +27,20 @@ public class MainActivity extends AppCompatActivity {
         new Thread() {
             @Override
             public void run() {
+                AvailablePairsInfo api = null;
+                try {
+                    api = LiveCoinService.getAvailablePairsInfo();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (HttpPostException e) {
+                    e.printStackTrace();
+                }
 
+                for(PairInfo info : api.getPairInfo()){
+                    System.out.println(info);
+                }
             }
         }.start();
     }
