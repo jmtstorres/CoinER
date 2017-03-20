@@ -70,22 +70,23 @@ public final class LiveCoinService {
 		return (AvailableCurrencies) getJson(fullUrl, AvailableCurrencies.class);
 	}
 
-	public static Object getJson(String url, Class<?> jsonClass) throws IOException, JSONException, HttpPostException{
-		JSONObject jsonObj = new JSONObject();
+	public static JSONObject getJsonRaw(String url) throws IOException, JSONException, HttpPostException{
 		HttpClientPost post = new HttpClientPost();
-		
-		jsonObj = post.getFromURL(url);
-		
+		JSONObject jsonObj = post.getFromURL(url);
+		return jsonObj;
+	}
+
+	public static Object getJson(String url, Class<?> jsonClass) throws IOException, JSONException, HttpPostException{
+		JSONObject jsonObj = getJsonRaw(url);
 		Gson gson = new Gson();
 		Object ret = gson.fromJson(jsonObj.toString(), jsonClass);
 		return ret; 
 	}
 	
 	public static Object getJson(String url, Class<?> jsonClass, String adjust) throws IOException, JSONException, HttpPostException{
-		JSONObject jsonObj = new JSONObject();
 		HttpClientPost post = new HttpClientPost();
-		
-		jsonObj = post.getFromURL(url, adjust);
+
+		JSONObject jsonObj = post.getFromURL(url, adjust);
 		
 		Gson gson = new Gson();
 		Object ret = gson.fromJson(jsonObj.toString(), jsonClass);

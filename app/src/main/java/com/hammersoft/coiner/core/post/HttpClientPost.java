@@ -1,5 +1,7 @@
 package com.hammersoft.coiner.core.post;
 
+import com.hammersoft.coiner.core.post.exception.HttpPostException;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,13 +14,11 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.hammersoft.core.post.exception.HttpPostException;
-
 public class HttpClientPost {
 	
 	private Logger logger = Logger.getLogger(this.getClass());
 
-	public JSONObject request(String address) throws HttpPostException{
+	public JSONObject request(String address) throws HttpPostException {
 		
 		try {
 			logger.info("Efetuando Requisi��o...");

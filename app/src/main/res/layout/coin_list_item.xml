@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            app:srcCompat="@drawable/drop_shadow"
+            android:id="@+id/imageView3"
+            android:layout_height="5dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:gravity="center_vertical|center_horizontal"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:gravity="center_vertical|center_horizontal">
+
+            <ImageView
+                app:srcCompat="@drawable/ic_btc"
+                android:id="@+id/imageView"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:layout_margin="5dp"
+                android:layout_width="35sp"
+                android:layout_height="35sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCoinName"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:textAlignment="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textStyle="normal|bold"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewBTC"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:textAlignment="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textStyle="normal|bold"
+                android:textSize="24sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewBTCVal"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:textAlignment="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewUSD"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:textAlignment="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textStyle="normal|bold"
+                android:textSize="24sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewUSDVal"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:textAlignment="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

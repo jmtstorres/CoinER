@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CoinER</string>
+    <string name="btc">BTC</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="by_hammersoft"><a href="https://play.google.com/store/apps/dev?id=8988717614304464293">HammerSoft</a></string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="str_btc">BTC</string>
+    <string name="str_usd">USD</string>
+    <string name="str_null_value">0.0</string>
+    <string name="str_param_currency_symbol">CurrencySymbol</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
