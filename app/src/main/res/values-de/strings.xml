@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_service_error">Service offline oder nicht erreichbar, bitte später nochmal versuchen</string>
+    <string name="str_network_error">Bitte überprüfe deine Internetverbindung</string>
+    <string name="notify_value">Benachrichtigen Sie größere Variation:</string>
+    <string name="str_cancel">Stornieren</string>
+    <string name="str_reload">Aktualisieren</string>
+    <string name="str_upper">größer ist als:</string>
+    <string name="str_lower">weniger als:</string>
+    <string name="str_privacy">Wir versuchen, unsere besten Apps zu tun. Helfen Sie uns weiter. Unterstützen Sie den Entwickler von direkt von Google Play herunterzuladen, wird danken wir immer für unsere Anwendungen arbeiten, haben die Qualität, die unsere Mitglieder verdienen.</string>
+</resources>

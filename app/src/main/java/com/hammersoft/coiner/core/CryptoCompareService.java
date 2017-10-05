@@ -27,6 +27,9 @@ public class CryptoCompareService {
     private static final String CRYPTOCOMPARE_API_PARAM_TSYMS = "tsyms=";
     private static final String CRYPTOCOMPARE_API_PARAM_TSYM = "tsym=";
     private static final String CRYPTOCOMPARE_API_PARAM_TS = "ts=";
+    private static final String CRYPTOCOMPARE_API_PARAM_LIMIT = "limit=";
+    private static final String CRYPTOCOMPARE_API_PARAM_AGGREGATE = "aggregate=";
+    private static final String CRYPTOCOMPARE_API_PARAM_E = "e=CCCAGG";
     private static final String CRYPTOCOMPARE_API_PARAM_APP = "appname=";
 
     public static Double getHistoryValue(String coinFrom, String coinTo, long timestamp) throws JSONException, IOException, HttpPostException{
@@ -45,14 +48,21 @@ public class CryptoCompareService {
         return json.getJSONObject(coinFrom).getDouble(coinTo);
     }
 
-    public static CoinHistoryDay getHistoryDay(String coinFrom, String coinTo) throws JSONException, IOException, HttpPostException{
+    public static CoinHistoryDay getHistoryDay(String coinFrom, String coinTo, int limit, int aggregate) throws JSONException, IOException, HttpPostException{
         String fullUrl =
                 CRYPTOCOMPARE_API_BASE_URL +
                 CRYPTOCOMPARE_API_HISTORY_DAY +
                 CRYPTOCOMPARE_API_PARAM_SEP_URL +
                 CRYPTOCOMPARE_API_PARAM_FSYM + coinFrom +
                 CRYPTOCOMPARE_API_PARAM_SEP +
-                CRYPTOCOMPARE_API_PARAM_TSYM + coinTo;
+                CRYPTOCOMPARE_API_PARAM_TSYM + coinTo +
+                CRYPTOCOMPARE_API_PARAM_SEP +
+                CRYPTOCOMPARE_API_PARAM_LIMIT + limit +
+                CRYPTOCOMPARE_API_PARAM_SEP +
+                CRYPTOCOMPARE_API_PARAM_AGGREGATE + aggregate +
+                CRYPTOCOMPARE_API_PARAM_SEP +
+                CRYPTOCOMPARE_API_PARAM_E;
+
 
         return (CoinHistoryDay) getJson(fullUrl, CoinHistoryDay.class);
     }

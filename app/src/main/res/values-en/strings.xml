@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_service_error">Service offline or unreachable, please try again later</string>
+    <string name="str_network_error">Please, check your internet connection</string>
+    <string name="notify_value">Notify variation greater than:</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_reload">Refresh</string>
+    <string name="str_upper">Upper limit:</string>
+    <string name="str_lower">Lower Limit:</string>
+    <string name="str_privacy">We\'re working to make our apps better. Help us to continue. Support the developer by downloading directly from Google Play, we\'ll thank you for working more and more to make our apps the quality our users deserve.</string>
+</resources>

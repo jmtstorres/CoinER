@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: "$rootDir/utils.gradle"
 
 android {
     compileSdkVersion 24
@@ -7,14 +8,15 @@ android {
         applicationId "com.hammersoft.coiner"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        buildConfigField 'String', 'SECRET_KEY', toJavaCodeString(SECRET_KEY)
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -45,6 +47,8 @@ dependencies {
     compile 'com.jjoe64:graphview:4.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support.constraint:constraint-layout:+'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
+
     testCompile 'junit:junit:4.12'
 }
 

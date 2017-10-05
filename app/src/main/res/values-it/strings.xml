@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_network_error">Vi preghiamo di controllare la connessione di rete</string>
+    <string name="str_service_error">Servizio in linea o non raggiungibile, riprova più tardi</string>
+    <string name="notify_value">Notifica maggiore variazione:</string>
+    <string name="str_cancel">Annullare</string>
+    <string name="str_reload">Aggiornare</string>
+    <string name="str_upper">superiore a:</string>
+    <string name="str_lower">inferiore a:</string>
+    <string name="str_privacy">Stiamo cercando di fare le nostre migliori applicazioni. Aiutaci a continuare. Sostenere lo sviluppatore scaricando direttamente da Google Play, ringrazieremo sempre più a lavorare per le nostre applicazioni hanno la qualità che i nostri membri meritano.</string>
+</resources>

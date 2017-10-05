@@ -22,45 +22,144 @@
         android:layout_alignParentTop="true">
 
         <RelativeLayout
+            android:id="@+id/privacy_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/net_layout"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:visibility="visible">
 
             <ImageView
+                android:id="@+id/imageView6"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/img_net"
+                android:layout_height="150dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_wait" />
+
+            <TextView
+                android:id="@+id/textViewPrivacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView6"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:text="@string/str_privacy"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageViewPrivacy"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewPrivacy"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_google_play" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imageViewReload"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="30dp"
+                ads:srcCompat="@drawable/custom_progressbar" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageViewError"
+                android:layout_margin="10dp"
+                android:text="@string/str_service_error"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageViewError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                app:srcCompat="@drawable/icon_service_error" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/net_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView5"
+                android:layout_margin="10dp"
+                android:text="@string/str_network_error"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
                 android:id="@+id/imageView5"
-                android:scaleType="center" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                app:srcCompat="@drawable/img_net" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/loadingPanel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:visibility="visible">
 
             <ProgressBar
-            android:id="@+id/progressBar1"
-            android:background="@drawable/circle_shape"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:indeterminate="true"
-            android:indeterminateDrawable="@drawable/custom_progressbar"/>
+                android:id="@+id/progressBar1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle_shape"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/custom_progressbar" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -73,6 +172,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:visibility="visible"
             android:weightSum="5">
 
             <LinearLayout
@@ -88,26 +188,34 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="5dp">
 
                     <ImageView
                         android:id="@+id/imageViewIconBTC"
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
                         android:layout_gravity="center_vertical|center_horizontal|center"
                         app:srcCompat="@drawable/ic_btc" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textViewTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|center_horizontal|center"
                         android:gravity="center"
-                        android:padding="12dp"
+                        android:padding="5dp"
                         android:text="@string/btc"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textSize="36sp"
                         android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageViewNotifyBTC"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        ads:srcCompat="@drawable/ic_notify" />
                 </LinearLayout>
 
                 <TextView
@@ -117,7 +225,6 @@
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="12dp"
                     android:textAlignment="center"
                     android:textSize="36sp" />
 
@@ -140,7 +247,7 @@
                     android:id="@+id/coinListView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:descendantFocusability="blocksDescendants"/>
+                    android:descendantFocusability="blocksDescendants" />
 
             </android.support.v4.widget.SwipeRefreshLayout>
 
@@ -163,7 +270,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/adView"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorPrimary"
+            android:visibility="visible">
 
         </RelativeLayout>
 
@@ -171,10 +279,12 @@
             android:id="@+id/adView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"></com.google.android.gms.ads.AdView>
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+
     </RelativeLayout>
 
 </FrameLayout>

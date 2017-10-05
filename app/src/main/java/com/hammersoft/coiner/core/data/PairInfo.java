@@ -13,31 +13,31 @@ public class PairInfo {
 	private String symbol;
 	@SerializedName("last")
 	@Expose
-	private Double last;
+	private Float last;
 	@SerializedName("high")
 	@Expose
-	private Double high;
+	private Float high;
 	@SerializedName("low")
 	@Expose
-	private Double low;
+	private Float low;
 	@SerializedName("volume")
 	@Expose
-	private Double volume;
+	private Float volume;
 	@SerializedName("vwap")
 	@Expose
-	private Double vwap;
+	private Float vwap;
 	@SerializedName("max_bid")
 	@Expose
-	private Double maxBid;
+	private Float maxBid;
 	@SerializedName("min_ask")
 	@Expose
-	private Double minAsk;
+	private Float minAsk;
 	@SerializedName("best_bid")
 	@Expose
-	private Double bestBid;
+	private Float bestBid;
 	@SerializedName("best_ask")
 	@Expose
-	private Double bestAsk;
+	private Float bestAsk;
 
 	public String getCur() {
 		return cur;
@@ -55,75 +55,75 @@ public class PairInfo {
 		this.symbol = symbol;
 	}
 
-	public Double getLast() {
+	public Float getLast() {
 		return last;
 	}
 
-	public void setLast(Double last) {
+	public void setLast(Float last) {
 		this.last = last;
 	}
 
-	public Double getHigh() {
+	public Float getHigh() {
 		return high;
 	}
 
-	public void setHigh(Double high) {
+	public void setHigh(Float high) {
 		this.high = high;
 	}
 
-	public Double getLow() {
+	public Float getLow() {
 		return low;
 	}
 
-	public void setLow(Double low) {
+	public void setLow(Float low) {
 		this.low = low;
 	}
 
-	public Double getVolume() {
+	public Float getVolume() {
 		return volume;
 	}
 
-	public void setVolume(Double volume) {
+	public void setVolume(Float volume) {
 		this.volume = volume;
 	}
 
-	public Double getVwap() {
+	public Float getVwap() {
 		return vwap;
 	}
 
-	public void setVwap(Double vwap) {
+	public void setVwap(Float vwap) {
 		this.vwap = vwap;
 	}
 
-	public Double getMaxBid() {
+	public Float getMaxBid() {
 		return maxBid;
 	}
 
-	public void setMaxBid(Double maxBid) {
+	public void setMaxBid(Float maxBid) {
 		this.maxBid = maxBid;
 	}
 
-	public Double getMinAsk() {
+	public Float getMinAsk() {
 		return minAsk;
 	}
 
-	public void setMinAsk(Double minAsk) {
+	public void setMinAsk(Float minAsk) {
 		this.minAsk = minAsk;
 	}
 
-	public Double getBestBid() {
+	public Float getBestBid() {
 		return bestBid;
 	}
 
-	public void setBestBid(Double bestBid) {
+	public void setBestBid(Float bestBid) {
 		this.bestBid = bestBid;
 	}
 
-	public Double getBestAsk() {
+	public Float getBestAsk() {
 		return bestAsk;
 	}
 
-	public void setBestAsk(Double bestAsk) {
+	public void setBestAsk(Float bestAsk) {
 		this.bestAsk = bestAsk;
 	}
 

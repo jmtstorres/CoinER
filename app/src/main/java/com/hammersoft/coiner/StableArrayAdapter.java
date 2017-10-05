@@ -23,7 +23,6 @@ public class StableArrayAdapter extends ArrayAdapter<ListData> {
 
             super(context, textViewResourceId, layoutResourceId, objects);
             this.objects = objects;
-            loadCoinIcons();
         }
 
         @Override
@@ -32,15 +31,23 @@ public class StableArrayAdapter extends ArrayAdapter<ListData> {
             convertView = inflater.inflate(R.layout.coin_list_item, parent, false);
 
             ImageView image = (ImageView)convertView.findViewById(R.id.imageView);
-            Integer icon = iconMap.get(objects.get(position).getSymbol());
+            Integer icon = getIcon(objects.get(position).getSymbol());
             if(icon == null){
                 icon = R.drawable.ic_btc;
             }
             image.setImageResource(icon);
             image.setFocusable(false);
 
+            image = (ImageView)convertView.findViewById(R.id.imageViewNotify);
+            if(!objects.get(position).isAlert()){
+                image.setVisibility(View.GONE);
+            }
+
+            TextView symbolView = (TextView)convertView.findViewById(R.id.textViewCoinSymbol);
+            symbolView.setText(objects.get(position).getSymbol());
+
             TextView nameView = (TextView)convertView.findViewById(R.id.textViewCoinName);
-            nameView.setText(objects.get(position).getSymbol());
+            nameView.setText(objects.get(position).getName().replace(" ", "\n"));
 
             TextView btcView = (TextView)convertView.findViewById(R.id.textViewBTC);
             btcView.setText("BTC");
@@ -57,18 +64,10 @@ public class StableArrayAdapter extends ArrayAdapter<ListData> {
             return convertView;
         }
 
-        private void loadCoinIcons(){
-            iconMap = new HashMap<>();
-            iconMap.put("ADC", R.drawable.ic_adc);
-            iconMap.put("BTC", R.drawable.ic_btc);
-            iconMap.put("CLOAK", R.drawable.ic_cloak);
-            iconMap.put("DASH", R.drawable.ic_dash);
-            iconMap.put("DOGE", R.drawable.ic_doge);
-            iconMap.put("EMC", R.drawable.ic_emc);
-            iconMap.put("ETH", R.drawable.ic_eth);
-            iconMap.put("LTC", R.drawable.ic_ltc);
-            iconMap.put("XMR", R.drawable.ic_xmr);
-        }
+    private int getIcon(String symbol){
+        String mDrawableName = "ic_" + symbol.toLowerCase();
+        return getContext().getResources().getIdentifier(mDrawableName , "drawable", getContext().getPackageName());
+    }
 
         public ListData getListDataItem(int position){
             return objects.get(position);
